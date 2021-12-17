@@ -1,0 +1,105 @@
+
+doctype html
+head
+    title Add Product
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+    style(type='text/css').
+        ul.nav {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 36px;
+            line-height: 36px;
+           font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        ul.nav li {
+            border-right: 0px solid #000000;
+           float: left;
+        }
+        ul.nav a {
+            display: block;
+            padding: 0 28px;
+            color: #000000;
+            text-decoration: none;
+        }
+        ul.nav a:hover,
+        ul.nav li.current a {
+            background: #fff;
+        }
+    style(type='text/css').
+        .box {
+            background: white;
+            width: 350px;
+            border-radius: 0px;
+            margin: 0 auto 0 auto;
+            padding: 20px 0px 0px 0px;
+            border: #2980b9 1px solid;
+            text-align: right;
+        }
+        label {
+            display: inline-block;
+            width: 110px;
+            text-align: right;
+        }
+
+    
+h1 Product Management
+hr
+ul.nav
+  li
+    a(href='/home') Home
+  li
+    a(href='#') About Us
+  li
+    a(href='#') Add Product Details
+  li
+    a(href='/home') Show Report
+  
+  li 
+    a(href="/logout") Logout
+hr
+
+
+.login.box
+  form(method='post' action='/update_data' enctype="multipart/form-data" style='display: table-cell;')
+    
+    input#p_id(type='hidden' name='p_id' required='required' autocomplete='off' placeholder='' value=products.p_id)
+   
+    label
+      | Product Name:
+    input#pname(type='text' name='pname' required='required' autocomplete='off' placeholder='' value=products.product_name)
+    br
+    br
+    label
+      | Price:
+    input#price(type='text' name='price' required='required' autocomplete='off' placeholder='' value=products.price)
+    br
+    br
+    label
+      | Vendor:
+    input#vendor(type='text' name='vendor' required='required' autocomplete='off' placeholder='' value=products.vendor)
+    input(type='hidden', name='product_id', value=id)
+    br
+    br
+    label
+      | Quantity:
+    input#quantity(type='text' name='quantity' required='required' autocomplete='off' placeholder='' value=products.quantity)
+    br
+    br
+    label
+      | Warranty:
+    input#waranty(type='text' name='waranty' required='required' autocomplete='off' placeholder='' value=products.waranty)
+    br
+    br
+   
+    input(type='submit' value='Update')
+    br
+    br
+
+
+
